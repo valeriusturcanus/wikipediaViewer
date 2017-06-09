@@ -6,7 +6,7 @@ $(document).ready(function() {
         var wikiAddress3 = "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=" + intemSearched + "&limit=" + manyArticles;
         $(".articleContainer").html(null);
         $.ajax({
-            url: wikiAddress3,
+            url: wikiAddress,
             dataType: "jsonp",
             success: function(response) {
                 for (var i = 0; i < response[1].length; i++) {
@@ -28,7 +28,7 @@ $(document).ready(function() {
         }
     });
     $("#button").click(function() {
-        var wikiRandomArticle = "http://en.wikipedia.org/w/api.php?action=query&format=json&list=random&rnnamespace=0&rnlimit=1";
+        var wikiRandomArticle = "https://en.wikipedia.org/w/api.php?action=query&format=json&list=random&rnnamespace=0&rnlimit=1&callback=wikiCallback";
         var randomArticle;
         $.ajax({
             url: wikiRandomArticle,
