@@ -3,10 +3,10 @@ $(document).ready(function() {
     function getArticles(intemSearched, manyArticles) {
         var wikiAddress = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + intemSearched + "&format=json&callback=wikiCallback";
         var wikiAddress2 = "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=" + intemSearched;
-        var wikiAddress3 = "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=" + intemSearched + "&limit=" + manyArticles;
+        var wikiAddress3 = "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=" + intemSearched + "&limit=" + manyArticles + "&callback=wikiCallback";
         $(".articleContainer").html(null);
         $.ajax({
-            url: wikiAddress,
+            url: wikiAddress3,
             dataType: "jsonp",
             success: function(response) {
                 for (var i = 0; i < response[1].length; i++) {
