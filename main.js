@@ -1,9 +1,9 @@
 $(document).ready(function() {
 
     function getArticles(intemSearched, manyArticles) {
-        var wikiAddress = "http://en.wikipedia.org/w/api.php?action=opensearch&search=" + intemSearched + "&format=json&callback=wikiCallback";
-        var wikiAddress2 = "http://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=" + intemSearched;
-        var wikiAddress3 = "http://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=" + intemSearched + "&limit=" + manyArticles;
+        var wikiAddress = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + intemSearched + "&format=json&callback=wikiCallback";
+        var wikiAddress2 = "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=" + intemSearched;
+        var wikiAddress3 = "https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=" + intemSearched + "&limit=" + manyArticles;
         $(".articleContainer").html(null);
         $.ajax({
             url: wikiAddress3,
